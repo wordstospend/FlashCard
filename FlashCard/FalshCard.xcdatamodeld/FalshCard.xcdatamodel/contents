@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1021" minimumToolsVersion="Xcode 7.0">
+    <entity name="Card" syncable="YES">
+        <attribute name="correct" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="incorrect" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="cardBack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardBack" inverseName="card" inverseEntity="CardBack" syncable="YES"/>
+        <relationship name="cardFront" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardFront" inverseName="card" inverseEntity="CardFront" syncable="YES"/>
+        <relationship name="set" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardSet" inverseName="cards" inverseEntity="CardSet" syncable="YES"/>
+    </entity>
+    <entity name="CardBack" syncable="YES">
+        <attribute name="answerText" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="cardBack" inverseEntity="Card" syncable="YES"/>
+    </entity>
+    <entity name="CardFront" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="questionText" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="cardFront" inverseEntity="Card" syncable="YES"/>
+    </entity>
+    <entity name="CardSet" syncable="YES">
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="set" inverseEntity="Card" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CardSet" positionX="-29" positionY="95" width="128" height="58"/>
+        <element name="Card" positionX="-236" positionY="-27" width="128" height="118"/>
+        <element name="CardFront" positionX="-54" positionY="-72" width="128" height="88"/>
+        <element name="CardBack" positionX="106" positionY="-45" width="128" height="73"/>
+    </elements>
+</model>
